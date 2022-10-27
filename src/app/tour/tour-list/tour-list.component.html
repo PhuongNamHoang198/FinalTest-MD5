@@ -1,0 +1,31 @@
+<table class="table" >
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">TITLE</th>
+    <th scope="col">PRICE</th>
+    <th scope="col">DESCRIPTION</th>
+    <th scope="col">ACTION</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let to of tours">
+    <td>{{to.id}}</td>
+    <td>{{to.title}}</td>
+    <td>{{to.price}}</td>
+    <td>{{to.description}}</td>
+    <td>
+      <a  routerLink="edit-tour/{{to.id}}" class="btn btn-success">Edit</a>
+    </td>
+    <td>
+      <button (click)="delete(to.id)" class="btn btn-success">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+  <td>
+    <a routerLink="saveTour" class="btn btn-success">Thêm</a>
+  </td>
+</table>
+<router-outlet></router-outlet>
+
+
